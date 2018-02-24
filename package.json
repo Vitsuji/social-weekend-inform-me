@@ -1,0 +1,30 @@
+{
+  "name": "social-weekend-inform-me",
+  "version": "0.0.1",
+  "description": "some words",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vitsuji/social-weekend-inform-me.git"
+  },
+  "author": "cotoCoders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vitsuji/social-weekend-inform-me/issues"
+  },
+  "homepage": "https://github.com/Vitsuji/social-weekend-inform-me#readme",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "config": "1.29.4",
+    "express": "4.16.2",
+    "node-telegram-bot-api": "0.30.0",
+    "require-all": "2.2.0",
+    "sequelize": "4.33.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.15.1"
+  }
+}
