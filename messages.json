@@ -1,6 +1,7 @@
 {
     "message": {
-        "welcome": "Hello from bot",
-        "test": "test message"
+        "welcome": "Welcome to InformMeBot!\nRequest a search for anything Lost or report something Found \n For any additional information type /help\nEnjoy! ",
+        "help": "InformMeBot is designed to help people find a thing they are searching for in a quick and efficient way. Please choose whether you wish to send a Lost report or Found report. Then proceed to choosing a category of classification of your sighting.",
+        "button_lost": "Hopefully I can assist the proccess of finding the thing that you ahve lost by connecting you to our newsletter.\nBut before that please choose the category of the thing at hand... "
     }
 }

@@ -25,12 +25,21 @@ module.exports = () => {
         res.sendStatus(200);
     });  
 
-    bot.onText(/hello/, (msg) => {
+    /*bot.onText(/hello/, (msg) => {
         const { chat: { id, first_name, last_name }} = msg;
         bot.sendMessage(id, `Hello ${first_name} ${last_name}!`).catch((error) => {
             console.log(error.response.body);
         });
+    });*/
+    
+    bot.on("callback_query", (query) => {
+        // 'callbackQuery' is of type CallbackQuery
+        console.log(query.data);
+        bot.answerCallbackQuery({ callback_query_id: query.id }).catch((error) => {
+            console.log(error.response.body);
+        });
     });
+
 
     return app;
 }

@@ -1,9 +1,18 @@
 const markups = {
     "default": {
         keyboard: [
-            [ { text: 'Test 🔍' }, { text: 'hello'} ],
-            [ { text: 'Test 1' }, { text: 'Test 2' } ],
+            [ { text: 'Lost 😞' }, { text: 'Found 😉'} ]
         ],               
+        resize_keyboard: true
+    },
+    "categories": {
+            inline_keyboard: [
+                [{ text: 'Human', callback_data: 'Human' }],
+                [{ text: 'Animal', callback_data: 'Animal' }],
+                [{ text: 'Object', callback_data: 'Object' }],
+                [{ text: 'Other', callback_data: 'Other' }],
+
+              ],              
         resize_keyboard: true
     }
 }
