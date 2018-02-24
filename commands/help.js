@@ -1,10 +1,10 @@
 const messages = require('./../messages.json');
 
-module.exports = (bot, replyMarkupsService) => {
+module.exports = (bot, replyMarkupsService, messagesService) => {
     bot.onText(/\/help/, function(msg) {
         const { chat: { id, first_name }} = msg,
-              response = `Hello ${first_name}.\n${messages.message.help}`,        
-              replyMarkup = replyMarkupsService.getMarkup('default');
+              response = messagesService.getMessage(msg, 'help'),        
+              replyMarkup = replyMarkupsService.getMarkup('default', msg);
         const options = {            
             reply_markup: replyMarkup
         };    

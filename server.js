@@ -5,14 +5,17 @@ const TelegramBot = require('node-telegram-bot-api');
 const config = require('config');
 
 const replyMarkupsService = require('./service/reply-markups');
+const messagesService = require('./service/messages');
 const BOT_COMMANDS = requireAll({dirname: `${__dirname}/commands`});
 const TOKEN = process.env.TELEGRAM_TOKEN || config.get('token');
 const bot = new TelegramBot(TOKEN);
 const url = process.env.BOT_URL || config.get('url');
 
+
+
 module.exports = () => {
     bot.setWebHook(`${url}/bot${TOKEN}`);
-    Object.keys(BOT_COMMANDS).forEach(command => BOT_COMMANDS[command](bot, replyMarkupsService));
+    Object.keys(BOT_COMMANDS).forEach(command => BOT_COMMANDS[command](bot, replyMarkupsService, messagesService));
 
     const app = express();
 
@@ -25,17 +28,11 @@ module.exports = () => {
         res.sendStatus(200);
     });  
 
-    /*bot.onText(/hello/, (msg) => {
-        const { chat: { id, first_name, last_name }} = msg;
-        bot.sendMessage(id, `Hello ${first_name} ${last_name}!`).catch((error) => {
-            console.log(error.response.body);
-        });
-    });*/
-    
+      
     bot.on("callback_query", (query) => {
-        // 'callbackQuery' is of type CallbackQuery
-        console.log(query.data);
-        bot.answerCallbackQuery({ callback_query_id: query.id }).catch((error) => {
+        console.log(query.from);
+        
+        bot.answerCallbackQuery(query.id, messagesService.getMessage(query, 'alert_selected')).catch((error) => {
             console.log(error.response.body);
         });
     });
