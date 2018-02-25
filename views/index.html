@@ -50,9 +50,7 @@
         
         <!-- First Photo Grid-->
         <div class="w3-row-padding">
-
-
-            <div class="w3-card-4 card_container">
+            <!--<div class="w3-card-4 card_container">
                     <header class="w3-container w3-light-grey">
                         <h3>Lost</h3>
                     </header>
@@ -71,36 +69,45 @@
                     <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
                 </div>
 
-
-               <div class="w3-card-4 card_container">
-                   <header class="w3-container w3-light-grey">
-                       <h3>Lost</h3>
-                   </header>
-                   <div class="main_card_info text_centered">
-                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                       <p class="inline"> Starovilenska 51</p>
-                       <hr>
-                       <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
-                   </div>
-                   <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
-                </div>
                 <div class="w3-card-4 card_container">
-                    <header class="w3-container w3-light-grey">
-                        <h3>Lost</h3>
-                    </header>
-                    <div class="main_card_info text_centered">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <p class="inline"> Starovilenska 51</p>
-                        <hr>
-                        <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                        <header class="w3-container w3-light-grey">
+                            <h3>Lost</h3>
+                        </header>
+                        <div class="main_card_info text_centered">
+                            <div>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <p class="inline"> 5th of August</p>
+                            </div>
+                            <div>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <p class="inline"> Starovilenska 51</p>
+                                <hr>
+                            </div>
+                            <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                        </div>
+                        <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
                     </div>
-                    <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
-                 </div>
+
+                    <div class="w3-card-4 card_container">
+                            <header class="w3-container w3-light-grey">
+                                <h3>Lost</h3>
+                            </header>
+                            <div class="main_card_info text_centered">
+                                <div>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p class="inline"> 5th of August</p>
+                                </div>
+                                <div>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <p class="inline"> Starovilenska 51</p>
+                                    <hr>
+                                </div>
+                                <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
+                        </div> -->
+
             </div>
-        
-    
-
-
         </div>
     
         <!-- Pagination -->
@@ -124,22 +131,32 @@
     <script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script>
         $.getJSON('json/example.json', function (data) {
-            var items = [];
-            var id = "";
-            $.each( data, function( key, val ) {
-                if(key == 'id'){
-                    id = key;
-                }else if( key == 'when') {
-                    items.push( "<li id='" + key + "'>" + val + "</li>" );
-                }
-                
-            });
+            console.log(data);
+            let jsonData = data;
+            
+            jsonData.forEach(element => {
+                var items = [];
+                var id = "";
+                $.each( element, function( key, val ) {
+                    if(key == 'id'){
+                        id = val;
+                    }else if( key == 'category') {
+                        items.push( "<header class='w3-container w3-light-grey'> <h3>"+val+"</h3></header>" );
+                    }else if (key == 'when') {
+                        items.push("<div class='main_card_info text_centered'><div><i class='fa fa-calendar' aria-hidden='true'></i><p class='inline'> "+val+"</p></div>");
+                    }else if (key == 'where') {
+                        items.push("<div><i class='fa fa-map-marker' aria-hidden='true'></i><p class='inline'>"+val+"</p><hr></div>");
+                    }else if(key == 'description') {
+                        items.push("<p>"+val+"</p><br></div><button class='w3-button w3-block w3-dark-grey'>+ Connect</button>");
+                    }
+                });
 
-            $( "<ul/>", {
-                "class": "w3-card-4 card_container",
-                "id": id,
-                html: items.join( "" )
-            }).appendTo( "body" );
+                $( "<div/>", {
+                    "class": "w3-card-4 card_container",
+                    "id": id,
+                    html: items.join( "" )
+                }).appendTo( ".w3-row-padding" );
+            });
             });
     </script>
 </body>
