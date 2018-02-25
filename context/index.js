@@ -1,19 +1,28 @@
-module.exports = (Sequelize, config) => {
-    const options = {
-        host: config.db.host,
-        dialect: 'mysql',
-        logging: false,
-        define: {
-            timestamps: true,
-            paranoid: true,
-        }
-    };
+const config = require('config');
 
-    const sequelize = new Sequelize(config.db.name, config.db.user, config.db.password, options);
+module.exports = (Sequelize) => {
+    const sequelize = new Sequelize(
+        config.get('db.database'),
+        config.get('db.user'),
+        config.get('db.password'),
+        config.get('db.options')
+    );
 
+    const Categories = require('./../models/category')(Sequelize, sequelize);
+    const Found = require('./../models/found')(Sequelize, sequelize);
+    const Lost = require('./../models/lost')(Sequelize, sequelize);
+    const Users = require('./../models/users')(Sequelize, sequelize);
+
+    Users.hasMany(Found); 
+    Users.hasMany(Lost);
+    Categories.hasMany(Found);
+    Categories.hasMany(Lost);
 
     return {
-        // TODO: add tables
+        Categories,
+        Found,
+        Lost,
+        Users,
 
         sequelize,
         Sequelize,
