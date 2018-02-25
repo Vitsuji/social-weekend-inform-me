@@ -1,0 +1,26 @@
+/* [============] Mixins [============] */
+/* [============] Imports [============] */
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+* {
+  padding: 0;
+  margin: 0; }
+
+h1, h2 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-weight: 100; }
+
+h3, h4, h5, p, a {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-weight: 100; }
+
+button {
+  outline: none; }
+
+#mySidebar {
+  z-index: 3;
+  width: 300px; }
+
+/*# sourceMappingURL=main.css.map */

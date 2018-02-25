@@ -3,6 +3,8 @@
     "help": "InformMeBot is designed to help people find a thing they are searching for in a quick and efficient way. Please choose whether you wish to send a Lost report or Found report. Then proceed to choosing a category of classification of your sighting.",
     "button_lost": "Hopefully I can assist the proccess of finding the thing that you have lost by connecting you to our newsletter.\nBut before that please: \n\n1️⃣ Choose the category of the thing at hand... ",
     "button_lost_prev": "I'm sorry for the loss",
+    "button_found": "I will try and inform the others of your finding",
+    "button_found_prev": "Yay!",
     "menu": "Go back to the menu.",
 
     
@@ -13,9 +15,9 @@
     "btn_cat_animal": "Animal",
     "btn_cat_object": "Object",
     "btn_cat_other": "Other",
-    "label_calendar": ".",
+    "label_calendar": "Please select the time of your finding 🕒",
     "btn_calendar": "Calendar",
-    "label_location": ".",    
+    "label_location": "Please let me know where you found this 📍",    
     "btn_location": "Location",
 
     "alert_selected": "Selected"
