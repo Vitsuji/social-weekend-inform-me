@@ -1,3 +1,5 @@
+import { log } from 'util';
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const requireAll = require('require-all');
@@ -32,13 +34,13 @@ module.exports = () => {
         });
     });*/
     
-    bot.on("callback_query", (query) => {
+    /*bot.on("callback_query", (query) => {
         // 'callbackQuery' is of type CallbackQuery
         console.log(query.data);
         bot.answerCallbackQuery({ callback_query_id: query.id }).catch((error) => {
             console.log(error.response.body);
         });
-    });
+    });*/
 
 
     return app;
