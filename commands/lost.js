@@ -30,6 +30,28 @@ module.exports = (bot, replyMarkupsService, messagesService) => {
 
     });
 
+    bot.on("callback_query", (query) => {
+        console.log(isReport);
+        if(!isReport) {
+            return;
+        }
+        
+        // TODO: Logic
+        if(query.data == 'cat-human') {
+            console.log('Human');
+        }else if(query.data == 'cat-animal') {
+            console.log('Animal');
+        }else if(query.data == 'cat-object') {
+            console.log('Object');
+        }else {
+            console.log('Other');
+        }
+
+        bot.answerCallbackQuery(query.id, messagesService.getMessage(query, 'alert_selected')).catch((error) => {
+            console.log(error.response.body);
+        });
+    });
+
     bot.on('location', (msg) => {
         if (!isReport) return;
         bot.sendMessage(msg.chat.id, "We saved your point " + 

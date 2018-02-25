@@ -1,5 +1,3 @@
-import { log } from 'util';
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const requireAll = require('require-all');
@@ -30,15 +28,13 @@ module.exports = () => {
         res.sendStatus(200);
     });  
 
-
-      
-    bot.on("callback_query", (query) => {
+    /*bot.on("callback_query", (query) => {
         console.log(query.from);
         
         bot.answerCallbackQuery(query.id, messagesService.getMessage(query, 'alert_selected')).catch((error) => {
             console.log(error.response.body);
         });
-    });
+    });*/
 
 
     return app;
