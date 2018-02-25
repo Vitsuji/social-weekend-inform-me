@@ -1,0 +1,42 @@
+$primary-font: 'Raleway', sans-serif;
+
+
+/* [============] Mixins [============] */
+
+@mixin mobile {
+   @media (max-width: #{$bp-mobile}){
+    @content;
+  }
+}
+
+@mixin tablet {
+   @media (min-width: #{$bp-mobile}) and (max-width: #{$bp-desktop - 1px}){
+    @content;
+  }
+}
+
+@mixin desktop {
+   @media (min-width: #{$bp-desktop}) and (max-width: #{$bp-widescreen}){
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media (min-width: #{$bp-desktop}) {
+   @content;
+ }
+}
+
+@mixin quadhd {
+  @media (min-width: #{$bp-widescreen}) and (max-width: #{$bp-quadhd}) {
+   @content;
+ }
+}
+
+/* [============] Imports [============] */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import "general";
+@import "sidebar";
