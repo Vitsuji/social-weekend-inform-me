@@ -10,7 +10,10 @@ module.exports = (Sequelize, sequelize) => {
 			allowNull: false,
 		},
 		where: {
-			
+			type: Sequelize.STRING
+		},
+		description: {
+			type: Sequelize.STRING
 		}
 	});
 };

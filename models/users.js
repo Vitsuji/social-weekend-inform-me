@@ -8,9 +8,6 @@ module.exports = (Sequelize, sequelize) => {
 		user_id: {
             type: Sequelize.INTEGER,
             allowNull: false
-        },
-        types: {
-            type: Sequelize.INTEGER
         }
 	});
 };

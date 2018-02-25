@@ -1,12 +1,14 @@
 const Sequelize = require('sequelize');
 
-const server = require('./server')();
+
+const db = require('./context')(Sequelize);
+const server = require('./server')(db);
 
 const port = process.env.PORT || 3000;
 
 (async function () {
 
-    // TODO: create db
+    await db.sequelize.sync({ force: false });
 
     server.listen(port, () => console.log(`server listening at https://localhost:${port}`));    
 })();
