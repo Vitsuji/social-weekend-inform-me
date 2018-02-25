@@ -2,6 +2,7 @@
 /* [============] Imports [============] */
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://www.w3schools.com/w3css/4/w3.css");
 * {
   padding: 0;
   margin: 0; }
@@ -19,8 +20,25 @@ h3, h4, h5, p, a {
 button {
   outline: none; }
 
+.inline {
+  display: inline; }
+
+.text_centered {
+  text-align: center; }
+
+hr {
+  margin: 10px 0; }
+
 #mySidebar {
   z-index: 3;
   width: 300px; }
+
+.card_container {
+  width: 30%;
+  display: inline-block;
+  margin: 1.47%; }
+
+.main_card_info {
+  padding: 10px 16px; }
 
 /*# sourceMappingURL=main.css.map */

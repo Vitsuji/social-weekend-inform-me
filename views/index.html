@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>InformMe Website</title>
 </head>
 <body>
@@ -51,52 +50,57 @@
         
         <!-- First Photo Grid-->
         <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-            <img src="/img/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
+
+            <div class="w3-card-4 card_container">
+                    <header class="w3-container w3-light-grey">
+                        <h3>Lost</h3>
+                    </header>
+                    <div class="main_card_info text_centered">
+                        <div>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <p class="inline"> 5th of August</p>
+                        </div>
+                        <div>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <p class="inline"> Starovilenska 51</p>
+                            <hr>
+                        </div>
+                        <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                    </div>
+                    <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
+                </div>
+
+
+               <div class="w3-card-4 card_container">
+                   <header class="w3-container w3-light-grey">
+                       <h3>Lost</h3>
+                   </header>
+                   <div class="main_card_info text_centered">
+                       <i class="fa fa-map-marker" aria-hidden="true"></i>
+                       <p class="inline"> Starovilenska 51</p>
+                       <hr>
+                       <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                   </div>
+                   <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
+                </div>
+                <div class="w3-card-4 card_container">
+                    <header class="w3-container w3-light-grey">
+                        <h3>Lost</h3>
+                    </header>
+                    <div class="main_card_info text_centered">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p class="inline"> Starovilenska 51</p>
+                        <hr>
+                        <p>I lost my cat lost its head. It is a very weird story but idk lol wow cool.</p><br>
+                    </div>
+                    <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
+                 </div>
             </div>
-        </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-            <img src="/img/lights.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div>
-        <div class="w3-third w3-container">
-            <img src="/img/nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div>
-        </div>
         
-        <!-- Second Photo Grid-->
-        <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-            <img src="/img/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-            <img src="/img/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div>
-        <div class="w3-third w3-container">
-            <img src="/img/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-            <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div>
+    
+
+
         </div>
     
         <!-- Pagination -->
@@ -116,18 +120,27 @@
     
     <!-- End page content -->
     </div>
-    
+
+    <script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-    }
-    
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
+        $.getJSON('json/example.json', function (data) {
+            var items = [];
+            var id = "";
+            $.each( data, function( key, val ) {
+                if(key == 'id'){
+                    id = key;
+                }else if( key == 'when') {
+                    items.push( "<li id='" + key + "'>" + val + "</li>" );
+                }
+                
+            });
+
+            $( "<ul/>", {
+                "class": "w3-card-4 card_container",
+                "id": id,
+                html: items.join( "" )
+            }).appendTo( "body" );
+            });
     </script>
 </body>
 </html>
