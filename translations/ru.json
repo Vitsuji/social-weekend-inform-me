@@ -1,0 +1,22 @@
+{
+    "welcome": "Добро пожаловать в InformMeBot!\nВы можете оставить заявку о пропаже, либо о том, что что-то нашли.\nЕсли нужна помощь - наберите /help",
+    "help": "InformMeBot is designed to help people find a thing they are searching for in a quick and efficient way. Please choose whether you wish to send a Lost report or Found report. Then proceed to choosing a category of classification of your sighting.",
+    "button_lost": "Я могу помочь вам, подписав вас на рассылку о пропаже.\nНо перед этим:\n\n1️⃣ Укажите категорию:",
+    "button_lost_prev": "Мне очень жаль, ",
+    "menu": "Назад в меню.",
+
+    
+    "btn_lost": "Я потерял 😞",
+    "btn_found": "Я нашел 😉",
+    "btn_menu": "Меню",
+    "btn_cat_human": "Человек",
+    "btn_cat_animal": "Животное",
+    "btn_cat_object": "Предмет",
+    "btn_cat_other": "Иное",
+    "label_calendar": "Укажите дату пропажи:",
+    "btn_calendar": "Календарь",
+    "label_location": "Укажите приблизительное место пропажи, прикрепив геопозицию:",
+    "btn_location": "Позиция",
+
+    "alert_selected": "Выбрано"    
+}

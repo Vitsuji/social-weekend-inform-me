@@ -1,10 +1,8 @@
-const messages = require('./../messages.json');
-
-module.exports = (bot, replyMarkupsService) => {
+module.exports = (bot, replyMarkupsService, messagesService) => {
     bot.onText(/\/start/, function(msg) {
         const fromId = msg.from.id,
-              response = messages.message.welcome,        
-              replyMarkup = replyMarkupsService.getMarkup('default');
+              response = messagesService.getMessage(msg, 'welcome'),        
+              replyMarkup = replyMarkupsService.getMarkup('default', msg);
         const options = {            
             reply_markup: replyMarkup
         };    
